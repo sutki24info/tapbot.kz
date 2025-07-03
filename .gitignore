@@ -1,0 +1,41 @@
+# === КРИТИЧНО: НЕ КОММИТИТЬ РЕАЛЬНЫЕ ПАРОЛИ ===
+
+# Реальные .env файлы с паролями
+.env
+*.env
+!*.env.template
+
+# SSL сертификаты и ключи
+*.key
+*.crt
+*.pem
+*.p12
+*.pfx
+
+# Backup файлы
+*.sql
+*.sql.gz
+*.tar.gz
+*.zip
+*backup*
+*dump*
+
+# Docker volumes data
+**/docker-data/
+**/volumes-data/
+**/*_data/
+
+# Временные файлы
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp
+*.log
+*.cache
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
