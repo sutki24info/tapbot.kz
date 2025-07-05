@@ -1,5 +1,5 @@
 ---
-title: 02-infrastructure
+title: configs
 ---
 
 [view:hierarchy=none::::List]

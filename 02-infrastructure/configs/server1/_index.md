@@ -1,5 +1,5 @@
 ---
-title: 02-infrastructure
+title: server 1
 ---
 
 [view:hierarchy=none::::List]

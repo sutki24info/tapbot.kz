@@ -1,5 +1,5 @@
 ---
-title: 02-infrastructure
+title: 06-operations
 ---
 
 [view:hierarchy=none::::List]
