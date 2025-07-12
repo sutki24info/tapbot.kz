@@ -105,10 +105,10 @@ GraphQL:
 
 **Связанные разделы:**
 
--  **Базы данных:** [03-02-databases](./../03-02-databases/README.md) - системы хранения данных
+-  **Базы данных:** [03-02-databases](./../03-02-databases/README) - системы хранения данных
 
--  **Приложения:** [03-03-applications](./../03-03-applications/README.md) - реализация принципов в приложениях
+-  **Приложения:** [03-03-applications](./../03-03-applications/README) - реализация принципов в приложениях
 
--  **Безопасность серверов:** [05-security/05-02-server-security](./../../05-security/05-02-server-security/README.md) - детали защиты
+-  **Безопасность серверов:** [05-security/05-02-server-security](./../../05-security/05-02-server-security/README) - детали защиты
 
--  **Планы масштабирования:** [08-planning/08-04-scaling](./../../08-planning/08-04-scaling/README.md) - долгосрочные планы
+-  **Планы масштабирования:** [08-planning/08-04-scaling](./../../08-planning/08-04-scaling/README) - долгосрочные планы
