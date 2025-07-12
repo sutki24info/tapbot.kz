@@ -250,12 +250,12 @@ Alert rules:
 
 **Связанные разделы:**
 
--  **Архитектурные принципы:** [03-01-architecture](./../03-01-architecture/README) - принципы проектирования
+-  **Архитектурные принципы:** [03-01-architecture](./../03-01-architecture/README.md) - принципы проектирования
 
--  **Серверная инфраструктура:** [02-infrastructure/02-01-servers](./../../02-infrastructure/02-01-servers/README) - физические серверы
+-  **Серверная инфраструктура:** [02-infrastructure/02-01-servers](./../../02-infrastructure/02-01-servers/README.md) - физические серверы
 
--  **Сетевая архитектура:** [04-network-architecture/04-02-ports](./../../04-network-architecture/04-02-ports/README) - порты и сети
+-  **Сетевая архитектура:** [04-network-architecture/04-02-ports](./../../04-network-architecture/04-02-ports/README.md) - порты и сети
 
--  **Операционное развертывание:** [06-operations/06-02-deployment](./../../06-operations/06-02-deployment/README) - процедуры развертывания
+-  **Операционное развертывание:** [06-operations/06-02-deployment](./../../06-operations/06-02-deployment/README.md) - процедуры развертывания
 
--  **Мониторинг операций:** [06-operations/06-03-monitoring](./../../06-operations/06-03-monitoring/README) - детальный мониторинг
+-  **Мониторинг операций:** [06-operations/06-03-monitoring](./../../06-operations/06-03-monitoring/README.md) - детальный мониторинг
