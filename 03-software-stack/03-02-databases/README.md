@@ -169,13 +169,3 @@ curl -X POST "http://qdrant:6333/collections/apartments/snapshots"
 -  **Qdrant:** Distributed deployment с репликацией коллекций
 
 ---
-
-**Связанные разделы:**
-
--  **Конфигурации серверов:** [02-infrastructure/02-02-resources](./../../02-infrastructure/02-02-resources/README) - ресурсы под базы данных
-
--  **Приложения:** [03-03-applications](./../03-03-applications/README) - интеграция с Directus и n8n
-
--  **Резервное копирование:** [06-operations/06-01-backup](./../../06-operations/06-01-backup/README) - процедуры backup
-
--  **Мониторинг:** [06-operations/06-03-monitoring](./../../06-operations/06-03-monitoring/README) - мониторинг производительности БД

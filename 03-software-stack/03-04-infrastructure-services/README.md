@@ -247,15 +247,3 @@ Alert rules:
 -  **Security Dashboard** - события безопасности и атаки
 
 ---
-
-**Связанные разделы:**
-
--  **Архитектурные принципы:** [03-01-architecture](./../03-01-architecture/README) - принципы проектирования
-
--  **Серверная инфраструктура:** [02-infrastructure/02-01-servers](./../../02-infrastructure/02-01-servers/README) - физические серверы
-
--  **Сетевая архитектура:** [04-network-architecture/04-02-ports](./../../04-network-architecture/04-02-ports/README) - порты и сети
-
--  **Операционное развертывание:** [06-operations/06-02-deployment](./../../06-operations/06-02-deployment/README) - процедуры развертывания
-
--  **Мониторинг операций:** [06-operations/06-03-monitoring](./../../06-operations/06-03-monitoring/README) - детальный мониторинг

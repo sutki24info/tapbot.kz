@@ -68,13 +68,3 @@ Traefik, Docker, система логирования, метрики и але
 -  AI интеграции: OpenAI API через n8n
 
 ---
-
-**Связанные разделы:**
-
--  **Инфраструктура:** [02-infrastructure](./../02-infrastructure/README) - серверы и ресурсы
-
--  **Сетевая архитектура:** [04-network-architecture](./../04-network-architecture/README) - DNS и порты
-
--  **Безопасность:** [05-security](./../05-security/README) - защита серверов и приложений
-
--  **Операции:** [06-operations](./../06-operations/README) - развертывание и мониторинг
