@@ -2,111 +2,215 @@
 title: 03.03 - Приложения
 ---
 
-**Последнее обновление:** 10 июля 2025
+**Назначение:** Основные приложения и сервисы проекта
 
-## 03\.03.01 - Directus (CMS/API)
+## 03\.03.01 - Directus (CMS/API платформа)
+
+**Назначение:** Headless CMS и административная панель для управления контентом
 
 ```yaml
-Directus 10.10:
-  Сервер: Второй (178.236.17.186)
-  Назначение: Headless CMS + автоматическое REST/GraphQL API
+Directus 10.5.0:
+  Сервер: Второй сервер (178.236.17.186)
   Домен: dir.tapbot.kz
-  Функции:
-    - Управление контентом через веб-интерфейс
-    - Автоматическое API для всех таблиц PostgreSQL
-    - Управление пользователями и ролями
-    - Медиа-библиотека для файлов
-  Интеграции: n8n workflows, мобильные приложения
-  Ресурсы: ~15% CPU, ~400MB RAM
+  Ресурсы: ~20% CPU, ~600MB RAM
+  Интеграция: PostgreSQL backend
+  Статус: ✅ АКТИВЕН В ПРОДАКШЕНЕ
 ```
 
-### **Роль в архитектуре:**
+### Функциональность:
 
--  **Центральный API gateway** для всех приложений
+-  **Управление контентом ботов** - тексты сообщений, настройки поведения
 
--  **Веб-интерфейс** для управления данными команды
+-  **RESTful + GraphQL API** - интеграция с n8n workflow
 
--  **Автоматическая генерация API** из структуры БД
+-  **Административные панели** - интерфейсы для команды
 
--  **Права доступа** и ролевая модель
+-  **Права доступа и роли** - безопасное делегирование команде
 
-## 03\.03.02 - n8n (автоматизация)
+-  **Медиа-библиотека** - изображения для ботов и веб-интерфейсов
+
+### Схема данных в Directus:
+
+```yaml
+Collections:
+  bot_messages:
+    - message_key: string (уникальный ключ)
+    - message_text: text (текст сообщения)
+    - bot_type: enum (taxi, apartments)
+    - language: enum (ru, kz, en)
+    
+  bot_settings:
+    - setting_key: string
+    - setting_value: json
+    - bot_type: enum
+    - is_active: boolean
+    
+  user_profiles:
+    - telegram_id: integer
+    - first_name: string
+    - phone: string
+    - preferences: json
+```
+
+### API endpoints:
+
+```http
+GET /items/bot_messages - получить сообщения бота
+POST /items/user_profiles - создать профиль пользователя
+PUT /items/bot_settings/123 - обновить настройки
+```
+
+## 03\.03.02 - n8n (платформа автоматизации)
+
+**Назначение:** Low-code оркестрация бизнес-процессов и workflow
 
 ```yaml
 n8n 1.93.0:
-  Сервер: Первый (93.189.229.59)
-  Назначение: Low-code платформа автоматизации
-  Домен: n8n.tapbot.kz  
+  Текущий статус: Планируется на первом сервере  
+  Будущий домен: n8n.tapbot.kz
   Ресурсы: ~15% CPU, ~500MB RAM
   Персистентность: n8n_data volume
-  Интеграции:
-    - PostgreSQL (бизнес-логика)
-    - Directus API (управление контентом)
-    - Qdrant (векторный поиск)
-    - OpenAI/Anthropic (AI модели)
-    - Telegram Bot API
+  Статус: ⏳ В ПЛАНАХ
 ```
 
-### **Основные workflow:**
+### Ключевые workflow:
 
--  **Telegram-боты:** Обработка сообщений пользователей
+-  **Обработка сообщений Telegram** - парсинг команд и ответы пользователям
 
--  **AI-анализ:** Интеграция с векторным поиском и LLM
+-  **AI интеграции** - OpenAI/Anthropic для генерации ответов
 
--  **Бизнес-логика:** Поиск такси, бронирование квартир
+-  **Геокодинг и маршруты** - интеграция с картографическими API
 
--  **Уведомления:** Email, SMS, Telegram рассылки
+-  **Email и SMS уведомления** - автоматические уведомления
+
+-  **Синхронизация данных** - между Directus, PostgreSQL и внешними API
+
+### Примеры workflow:
+
+```yaml
+Telegram Bot Workflow:
+  Trigger: Webhook (Telegram Bot API)
+  Steps:
+    1. Parse incoming message
+    2. Get user profile from Directus
+    3. Determine intent (AI analysis)
+    4. Execute business logic
+    5. Generate response (AI if needed)
+    6. Send reply via Telegram API
+    7. Log interaction to PostgreSQL
+
+Booking Workflow:
+  Trigger: Manual/API call
+  Steps:
+    1. Validate booking data
+    2. Check availability
+    3. Create booking record
+    4. Send SMS confirmation
+    5. Schedule reminder emails
+    6. Update analytics
+```
 
 ## 03\.03.03 - Интеграции и API
 
-### **Ключевые интеграции:**
+### Внешние API интеграции:
 
-1. **n8n --> Directus API** - управление контентом и пользователями
+**Основные интеграции:**
 
-2. **n8n --> Qdrant** - векторный поиск для AI-ответов
+-  **Telegram Bot API** - основной канал взаимодействия с пользователями
 
-3. **n8n --> PostgreSQL** - бизнес-логика и аналитика
+-  **OpenAI GPT-4** - генерация AI ответов для ботов
 
-4. **Directus --> PostgreSQL** - основное хранилище данных
+-  **2GIS/Яндекс.Карты API** - геолокация и построение маршрутов
 
-5. **Redis ↔ все сервисы** - кэширование и сессии
+-  **SMS.ru/SMSC.ru** - SMS уведомления пользователям
 
-### **Интеграционный сценарий:**
+-  **Email провайдеры** - автоматические письма подтверждения
 
-1. **Пользователь пишет в Telegram-бот** --> n8n webhook
+**Конфигурация интеграций:**
 
-2. **n8n анализирует сообщение** --> поиск по Qdrant
+```yaml
+External APIs:
+  telegram:
+    base_url: "https://api.telegram.org/bot"
+    rate_limit: 30 req/sec
+    webhook_url: "https://n8n.tapbot.kz/webhook/telegram"
+    
+  openai:
+    model: "gpt-4-turbo-preview"
+    max_tokens: 1000
+    temperature: 0.7
+    rate_limit: 100 req/min
+    
+  sms_ru:
+    api_id: "${SMS_RU_API_ID}"
+    from: "tapbot.kz"
+    rate_limit: 60 req/min
+```
 
-3. **Найденная информация** --> обогащение через Directus API
+### Внутренние API:
 
-4. **Бизнес-логика** --> запрос к PostgreSQL
+**Архитектура внутренних API:**
 
-5. **Ответ кэшируется** --> Redis
+-  **Directus REST API** - CRUD операции с данными
 
-6. **Пользователь получает ответ** --> через Telegram Bot API
+-  **PostgreSQL direct connections** - высокопроизводительные запросы
+
+-  **Redis pub/sub** - реал-тайм уведомления между сервисами
+
+-  **Qdrant HTTP API** - векторный поиск и рекомендации
 
 ## 03\.03.04 - Мониторинг приложений
 
-**Мониторинг и логирование:**
+### Уровни мониторинга:
 
--  **Dozzle:** Real-time просмотр Docker логов (logs2.tapbot.kz)
+**Application level:**
 
--  **Portainer:** Управление контейнерами (portainer2.tapbot.kz)
+```yaml
+Метрики приложений:
+  - n8n workflow execution times
+  - Directus API response times
+  - Error rates и exceptions
+  - Memory usage и CPU utilization
+```
 
--  **Netdata:** Real-time системный мониторинг (планируется)
+**Integration level:**
 
--  **Grafana:** Дашборды и визуализация метрик (планируется)
+```yaml
+Метрики интеграций:
+  - External API response times
+  - API rate limit usage
+  - Webhook delivery success rates
+  - Failed integration attempts
+```
+
+**User level:**
+
+```yaml
+Пользовательские метрики:
+  - Bot conversation volumes
+  - User engagement rates
+  - Booking conversion rates
+  - Geographic usage patterns
+```
+
+### Инструменты мониторинга:
+
+-  **Netdata** - real-time системные метрики
+
+-  **Prometheus + Grafana** - сбор и визуализация метрик приложений
+
+-  **Directus logs** - встроенное логирование CMS операций
+
+-  **n8n execution logs** - детальные логи workflow выполнения
 
 ---
 
-**Связанные документы GitHub:**
+**Связанные разделы:**
 
--  `docs/02-infrastructure/02-01-servers/` - конфигурации и характеристики серверов
+-  **Базы данных:** [03-02-databases](./../03-02-databases/README) - хранение данных приложений
 
--  `docs/04-network-architecture/04-01-domains/` - доменная структура и DNS
+-  **Инфраструктурные сервисы:** [03-04-infrastructure-services](./../03-04-infrastructure-services/README) - Docker и Traefik
 
--  `docs/05-security/` - руководства по безопасности серверов
+-  **AI интеграции:** [07-development/07-02-ai-integration](./../../07-development/07-02-ai-integration/README) - детали AI workflow
 
--  `docs/06-operations/` - операционные процедуры и мониторинг
-
-**Важное примечание:** Данный документ является центральной архитектурной документацией. Для получения детальной информации о конфигурациях, безопасности или операционных процедурах используйте соответствующие специализированные документы в структуре GitHub.
+-  **Мониторинг операций:** [06-operations/06-03-monitoring](./../../06-operations/06-03-monitoring/README) - операционный мониторинг
