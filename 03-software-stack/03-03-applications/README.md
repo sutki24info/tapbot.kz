@@ -207,10 +207,10 @@ External APIs:
 
 **Связанные разделы:**
 
--  **Базы данных:** [03-02-databases](./../03-02-databases/README) - хранение данных приложений
+-  **Базы данных:** [03-02-databases](./../03-02-databases/README.md) - хранение данных приложений
 
--  **Инфраструктурные сервисы:** [03-04-infrastructure-services](./../03-04-infrastructure-services/README) - Docker и Traefik
+-  **Инфраструктурные сервисы:** [03-04-infrastructure-services](./../03-04-infrastructure-services/README.md) - Docker и Traefik
 
--  **AI интеграции:** [07-development/07-02-ai-integration](./../../07-development/07-02-ai-integration/README) - детали AI workflow
+-  **AI интеграции:** [07-development/07-02-ai-integration](./../../07-development/07-02-ai-integration/README.md) - детали AI workflow
 
--  **Мониторинг операций:** [06-operations/06-03-monitoring](./../../06-operations/06-03-monitoring/README) - операционный мониторинг
+-  **Мониторинг операций:** [06-operations/06-03-monitoring](./../../06-operations/06-03-monitoring/README.md) - операционный мониторинг
