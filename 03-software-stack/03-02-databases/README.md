@@ -172,10 +172,10 @@ curl -X POST "http://qdrant:6333/collections/apartments/snapshots"
 
 **Связанные разделы:**
 
--  **Конфигурации серверов:** [02-infrastructure/02-02-resources](./../../02-infrastructure/02-02-resources/_index) - ресурсы под базы данных
+-  **Конфигурации серверов:** [02-infrastructure/02-02-resources](./../../02-infrastructure/02-02-resources/README) - ресурсы под базы данных
 
--  **Приложения:** [03-03-applications](./../03-03-applications/_index) - интеграция с Directus и n8n
+-  **Приложения:** [03-03-applications](./../03-03-applications/README) - интеграция с Directus и n8n
 
--  **Резервное копирование:** [06-operations/06-01-backup](./../../06-operations/06-01-backup/_index) - процедуры backup
+-  **Резервное копирование:** [06-operations/06-01-backup](./../../06-operations/06-01-backup/README) - процедуры backup
 
--  **Мониторинг:** [06-operations/06-03-monitoring](./../../06-operations/06-03-monitoring/_index) - мониторинг производительности БД
+-  **Мониторинг:** [06-operations/06-03-monitoring](./../../06-operations/06-03-monitoring/README) - мониторинг производительности БД
