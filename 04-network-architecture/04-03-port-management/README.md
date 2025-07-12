@@ -256,10 +256,10 @@ fail2ban-client get jail-name banip
 
 **Связанные разделы:**
 
--  **Программный стек:** [03-software-stack](../../../03-software-stack/) - архитектура сервисов
+-  **Программный стек:** [03-software-stack](../../../03-software-stack/README) - архитектура сервисов
 
--  **Серверные ресурсы:** [02-infrastructure/02-02-resources](../../../02-infrastructure/02-02-resources/) - характеристики серверов
+-  **Серверные ресурсы:** [02-infrastructure/02-02-resources](../../../02-infrastructure/02-02-resources/README) - характеристики серверов
 
--  **Доменная структура:** [04-01-domains](./../04-01-domains/_index) - DNS и SSL конфигурация
+-  **Доменная структура:** [04-01-domains](./../04-01-domains/README) - DNS и SSL конфигурация
 
--  **Безопасность серверов:** [05-security/05-02-server-security](../../../05-security/05-02-server-security/) - UFW и fail2ban
+-  **Безопасность серверов:** [05-security/05-02-server-security](../../../05-security/05-02-server-security/README) - UFW и fail2ban
