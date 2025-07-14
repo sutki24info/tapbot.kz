@@ -52,7 +52,7 @@ title: Документация проекта tapbot.kz
 
 ### 02\.01.04 - Сетевая топология \[📝 В разработке\]
 
-## 02\.02 - [Resources](./02-infrastructure/02-02-resources/_index)
+## 02\.02 - [Resources](./02-infrastructure/02-02-resources/README.md)
 
 ### 02\.02.01 - CPU и вычислительная мощность
 
@@ -84,7 +84,7 @@ title: Документация проекта tapbot.kz
 
 # 03 - Software Stack
 
-## 03\.01 - [Architecture](./03-software-stack/03-01-architecture/_index)
+## 03\.01 - [Architecture](./03-software-stack/03-01-architecture/README.md)
 
 ### 03\.01.01 - Принципы архитектуры
 
@@ -94,7 +94,7 @@ title: Документация проекта tapbot.kz
 
 ### 03\.01.04 - Паттерны проектирования
 
-## 03\.02 - [Databases](./03-software-stack/03-02-databases/_index)
+## 03\.02 - [Databases](./03-software-stack/03-02-databases/README.md)
 
 ### 03\.02.01 - PostgreSQL
 
@@ -104,7 +104,7 @@ title: Документация проекта tapbot.kz
 
 ### 03\.02.04 - Стратегии резервного копирования
 
-## 03\.03 - [Applications](./03-software-stack/03-03-applications/_index)
+## 03\.03 - [Applications](./03-software-stack/03-03-applications/README.md)
 
 ### 03\.03.01 - n8n Workflow Automation
 
@@ -114,7 +114,7 @@ title: Документация проекта tapbot.kz
 
 ### 03\.03.04 - API Gateway
 
-## 03\.04 - [Infrastructure Services](./03-software-stack/03-04-infrastructure-services/_index)
+## 03\.04 - [Infrastructure Services](./03-software-stack/03-04-infrastructure-services/README.md)
 
 ### 03\.04.01 - Docker и контейнеризация
 
@@ -126,7 +126,7 @@ title: Документация проекта tapbot.kz
 
 # 04 - Network Architecture
 
-## 04\.01 - [Domains](./04-network-architecture/04-01-domains/_index)
+## 04\.01 - [Domains](./04-network-architecture/04-01-domains/README.md)
 
 ### 04\.01.01 - Основной домен tapbot.kz
 
@@ -146,7 +146,7 @@ title: Документация проекта tapbot.kz
 
 ### 04\.02.04 - Failover стратегии \[📝 В разработке\]
 
-## 04\.03 - [Port Management](./04-network-architecture/04-03-port-management/_index)
+## 04\.03 - [Port Management](./04-network-architecture/04-03-port-management/README.md)
 
 ### 04\.03.01 - Справочник портов
 
@@ -178,7 +178,7 @@ title: Документация проекта tapbot.kz
 
 ### 05\.01.04 - Incident response план \[📝 В разработке\]
 
-## 05\.02 - [Server Security](./05-security/05-02-server-security/_index)
+## 05\.02 - [Server Security](./05-security/05-02-server-security/README.md)
 
 ### 05\.02.01 - Linux hardening
 
@@ -258,7 +258,7 @@ title: Документация проекта tapbot.kz
 
 ### 06\.04.04 - Troubleshooting руководства \[📝 В разработке\]
 
-## 06\.05 - [System Administration](./06-operations/06-05-system-administration/_index)
+## 06\.05 - [System Administration](./06-operations/06-05-system-administration/README.md)
 
 ### 06\.05.01 - Webmin управление системой
 
@@ -352,7 +352,7 @@ title: Документация проекта tapbot.kz
 
 ### 08\.01.04 - Зависимости и риски \[📝 В разработке\]
 
-## 08\.02 - [Infrastructure](./08-planning/08-02-infrastructure/_index)
+## 08\.02 - [Infrastructure](./08-planning/08-02-infrastructure/README.md)
 
 ### 08\.02.01 - Этапы развития инфраструктуры
 
@@ -398,11 +398,11 @@ title: Документация проекта tapbot.kz
 
 1. **📚 Начни с основ:** Изучи project foundation для понимания проекта
 
-2. **🏗️ Изучи архитектуру:** [Infrastructure](./02-infrastructure/_index) + [Software Stack](./03-software-stack/_index) - основа проекта
+2. **🏗️ Изучи архитектуру:** [Infrastructure](./02-infrastructure/README.md) + [Software Stack](./03-software-stack/README.md) - основа проекта
 
-3. **🛡️ Настрой безопасность:** [Security](./05-security/_index) документация критична для продакшна
+3. **🛡️ Настрой безопасность:** [Security](./05-security/README.md) документация критична для продакшна
 
-4. **🔧 Запусти операции:** [Operations](./06-operations/_index) для backup, мониторинга и развертывания
+4. **🔧 Запусти операции:** [Operations](./06-operations/README.md) для backup, мониторинга и развертывания
 
 ### 🌐 Полезные ссылки
 
