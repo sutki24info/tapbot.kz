@@ -2,3 +2,8 @@ title: tapbot
 optionalCategoryIndex: true
 supportedLanguages: []
 syntax: GitHub Flavored Markdown
+properties:
+  - name: "123"
+    type: Flag
+    icon: a-arrow-up
+    style: blue
